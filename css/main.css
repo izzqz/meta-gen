@@ -1,0 +1,49 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+}
+
+/* .description {} */
+
+.app {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "inputs outputs outputs";
+    width: 100%;
+}
+
+input {
+    border-width: 0.15em;
+    font-size: 1rem;
+}
+
+.inputs {
+    grid-area: inputs;
+    justify-self: flex-end;
+}
+
+.inputs > div {
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+}
+
+/* TODO: Alight output */
+
+.outputs {
+    min-width: 100%;
+    grid-area: outputs;
+    user-select: all;
+}
+
+#output {
+    margin: 0;
+}

@@ -1,0 +1,64 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Meta Tags Genarator</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/main.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/github.min.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+        <script src="https://npmcdn.com/ejs/ejs.min.js"></script>
+    </head>
+    <body>
+        <div class="description">
+            <h1>Meta Tags generator for resume</h1>
+            <p>
+                This is just a small tool for generating meta tags for HTML
+                resume.
+            </p>
+        </div>
+        <div class="app">
+            <div class="inputs">
+                <div>
+                    <label for="name">
+                        Name <br />
+                        <input id="name" type="text" placeholder="Jonh Doe" />
+                    </label>
+                </div>
+                <div>
+                    <label for="email">
+                        Email <br />
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="john@example.com"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label for="url">
+                        Url of resume <br />
+                        <input
+                            type="url"
+                            id="url"
+                            placeholder="https://example.com/resume"
+                        />
+                    </label>
+                </div>
+            </div>
+            <div class="outputs">
+                <pre><code id="output" class="language-xml"></code></pre>
+            </div>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>
