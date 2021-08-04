@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Meta Tags Genarator</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
@@ -31,7 +32,7 @@
                 <div>
                     <label for="name">
                         Name <br />
-                        <input id="name" type="text" placeholder="Jonh Doe" />
+                        <input id="name" type="text"/>
                     </label>
                 </div>
                 <div>
@@ -40,7 +41,6 @@
                         <input
                             type="email"
                             id="email"
-                            placeholder="john@example.com"
                         />
                     </label>
                 </div>
@@ -50,8 +50,25 @@
                         <input
                             type="url"
                             id="url"
-                            placeholder="https://example.com/resume"
                         />
+                    </label>
+                </div>
+                <div>
+                    <label for="image">
+                        Url of image (portrait and etc) <br />
+                        <input
+                            type="url"
+                            id="image"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label for="description">
+                        Description<br />
+                        <textarea
+                            type="text"
+                            id="description"
+                            ></textarea>
                     </label>
                 </div>
             </div>
