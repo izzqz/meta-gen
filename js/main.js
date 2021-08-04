@@ -7,14 +7,15 @@ const DEFAULT_VALUES = {
     url: "http://example.com/resume",
     image: "http://example.com/image.jpeg",
     description: "---", // Proxy target
+    title: "---", // Proxy target
 };
 
 /**
- * 
+ *
  */
 const defaultValuesHandler = {
     get: function (target, prop, receiver) {
-        if (prop === "description") {
+        if (["description", "title"].includes(prop)) {
             const name = getValues("name");
             let defaultValue;
 
@@ -22,10 +23,10 @@ const defaultValuesHandler = {
                 defaultValue = `${name}'s Resume`; // Based on user's "name"
             }
             if (!name) {
-                defaultValue =`${target.name}'s Resume`; // Based on default "name"
+                defaultValue = `${target.name}'s Resume`; // Based on default "name"
             }
 
-            document.getElementById("description").placeholder = defaultValue;
+            document.getElementById(prop).placeholder = defaultValue;
             return defaultValue;
         }
 
@@ -65,15 +66,21 @@ const getValues = (id) => {
 async function updateOutput() {
     const values = getValues();
 
-    const xml = ejs.render(await template, values, {});
+    const xml = ejs.render(
+        await template,
+        Object.assign(values, { defaultValues }),
+        {}
+    );
 
-    output.innerHTML = hljs.highlight(xml, { language: "xml" }).value;
+    output.innerHTML = hljs.highlight(xml, { language: "xml" }).value
 }
 
-for (const id of inputIds) {
-    const el = document.getElementById(id);
-    el.addEventListener("input", updateOutput);
-    el.placeholder = defaultValues[id];
-}
+(function main() {
+    for (const id of inputIds) {
+        const el = document.getElementById(id);
+        el.addEventListener("input", updateOutput);
+        el.placeholder = defaultValues[id];
+    }
 
-updateOutput();
+    updateOutput();
+})();

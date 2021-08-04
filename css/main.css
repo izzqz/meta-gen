@@ -1,5 +1,5 @@
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -10,7 +10,10 @@ body {
     margin: 0;
 }
 
-/* .description {} */
+.description {
+    text-align: center;
+    margin-bottom: 2rem;
+}
 
 .app {
     display: grid;
@@ -30,14 +33,12 @@ input {
 .inputs {
     grid-area: inputs;
     justify-self: flex-end;
+    margin-right: 2rem;
 }
 
 .inputs > div {
     margin-bottom: 1rem;
-    margin-right: 2rem;
 }
-
-/* TODO: Alight output */
 
 .outputs {
     min-width: 100%;
@@ -47,4 +48,32 @@ input {
 
 #output {
     margin: 0;
+}
+
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+    20%,
+    60% {
+        transform: rotate(-25deg);
+    }
+    40%,
+    80% {
+        transform: rotate(10deg);
+    }
+}
+
+@media (max-width: 500px) {
+    .github-corner:hover .octo-arm {
+        animation: none;
+    }
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+    }
 }
