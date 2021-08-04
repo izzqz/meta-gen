@@ -58,7 +58,14 @@
         <div class="description">
             <h1>Meta Tags generator for resume</h1>
             <p>
-                Click to select&emsp;|&emsp;Insert inside <code>&lt;head&gt;</code> tag&emsp;|&emsp;Check on <a href="https://metatags.io/">metatags.io</a>
+                Click to select&emsp;|&emsp;Insert inside
+                <code class="language-xml"
+                    ><span class="hljs-tag"
+                        >&lt;<span class="hljs-name">head</span>&gt;</span
+                    ></code
+                >
+                tag&emsp;|&emsp;Check on
+                <a href="https://metatags.io/">metatags.io</a>
             </p>
         </div>
         <div class="app">
@@ -67,12 +74,6 @@
                     <label for="name">
                         Name <br />
                         <input id="name" type="text" />
-                    </label>
-                </div>
-                <div>
-                    <label for="email">
-                        Email <br />
-                        <input type="email" id="email" />
                     </label>
                 </div>
                 <div>
@@ -99,11 +100,30 @@
                         <textarea type="text" id="description"></textarea>
                     </label>
                 </div>
+                <details>
+                    <summary>json-ld stuff</summary>
+                    <div>
+                        <label for="email">
+                            Email <br />
+                            <input type="email" id="email" />
+                        </label>
+                    </div>
+                    <div>
+                        <label for="JobTitle">
+                            Job Title<br />
+                            <input type="text" id="jobTitle" />
+                        </label>
+                    </div>
+                </details>
             </div>
             <div class="outputs">
-                <pre><code id="output" class="language-xml"></code></pre>
+                <pre><code id="output" class="language-xml"><h3>Loading...</h3></code></pre>
             </div>
         </div>
+
+        <footer>
+            tool by <a href="https://izzqz.me">izzqz</a>
+        </footer>
         <script src="js/main.js"></script>
     </body>
 </html>

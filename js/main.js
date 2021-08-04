@@ -1,13 +1,17 @@
 /**
- *
+ * 
+ * 
  */
 const DEFAULT_VALUES = {
     name: "John Doe",
-    email: "john@example.com",
     url: "http://example.com/resume",
     image: "http://example.com/image.jpeg",
     description: "---", // Proxy target
     title: "---", // Proxy target
+    
+    // json-ld stuff
+    jobTitle: "Frontend Developer",
+    email: "john@example.com"
 };
 
 /**

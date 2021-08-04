@@ -1,22 +1,73 @@
-<title><%= title %></title>
+<%####
+        WARNING: This file is sesitive
+
+        I'm trying to make a fansy look with out a lot of '\n'.
+        But because of ejs its hard to edit.
+
+        And also this pig will be downloaded on every browser request:
+           _
+          ((`)_.._     ,'-. _..._ _._
+           \,'    '-._.-\  '     ` .-'
+          .'            /         (
+         /             |     _   _ \
+        |              \     e   e  |
+        ;                     .-.   /
+         ;       ',       '-.( '')-'
+          '.      |           ;-'
+            \    /           /
+            /   /-._  __,  7 |
+            \  `\  \``  |  | |
+             \   \_,\   |  |_,\
+          jgs '-`'      \_,\
+###%><%
+
+/**
+ * Checks if input `id` has user input
+ * NOTE: In this context `this` points to global `window`
+ * @returns {boolean}
+ */
+const has = id => !!this[id]?.value
+
+%><title><%= title %></title>
 <meta author="<%= name %>" />
 <meta name="keywords" content="<%= name %>,resume,curriculum vitae,cv" />
 <meta name="description" content="<%= description %>" />
 
 <!-- OpenGraph -->
 <meta property="og:title" content="<%= title %>" />
-<meta property="og:type" content="document" />
-<meta property="og:url" content="<%= url %>" />
-
-<% if (!(image === defaultValues.image)) { %>
-<meta property="og:image" content="<%= image %>" />
-<% } %>
-
+<meta property="og:type" content="document" /><%-
+has('url') ? `\n<meta property="og:url" content="${url}">` : '' %><%-
+has('image') ? `\n<meta property="og:image" content="${image}" />` : ''
+%>
 <meta property="og:description" content="<%= description %>" />
 
 <!-- Twitter specific -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:url" content="<%= url %>" />
+<meta name="twitter:card" content="summary" /><%-
+has('url') ? `\n<meta name="twitter:url" content="${url}">` : '' %>
 <meta name="twitter:title" content="<%= title %>" />
-<meta name="twitter:description" content="<%= description %>" />
-<meta name="twitter:image" content="[link to your picture]" />
+<meta name="twitter:description" content="<%= description %>" /><%-
+has('image') ? `\n<meta name="twitter:image" content="${image}" />` : ''
+%>
+
+<script type="application/ld+json">
+<%-
+    (function generateJsonLd() {
+        const value = {
+            "@context": "http://www.schema.org",
+            "@type": "Person",
+            "name": name
+        }
+
+        const specificIDs = ['email', 'image', 'jobTitle'];
+
+        for (const id of specificIDs) {
+            if (has(id)) {
+                value[id] = this[id].value; // window object
+            }
+        }
+        
+        return JSON.stringify(value, null, 4)
+    })()
+%>
+</script>
+
