@@ -44,7 +44,6 @@ details > div {
 .outputs {
     min-width: 100%;
     grid-area: outputs;
-    user-select: all;
 }
 
 #output {
