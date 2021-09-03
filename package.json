@@ -1,14 +1,14 @@
 {
   "name": "meta-gen",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "This tool helps you to generate meta tags and metadata for your web resume",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "serve ."
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "izzqz <vyacheslav@izzqz.me>",
+  "license": "MIT",
   "devDependencies": {
     "serve": "^12.0.0"
   }
