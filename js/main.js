@@ -1,5 +1,5 @@
 /**
- * 
+ * How
  * 
  */
 const DEFAULT_VALUES = {
@@ -15,7 +15,7 @@ const DEFAULT_VALUES = {
 };
 
 /**
- *
+ * 
  */
 const defaultValuesHandler = {
     get: function (target, prop, receiver) {
