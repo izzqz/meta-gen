@@ -1,6 +1,6 @@
 # Meta tags generator for resume
 
-## To use open: <link>
+## To use open: https://meta-gen.izzqz.me/
 
 ![preview](assets/preview.png)
 
